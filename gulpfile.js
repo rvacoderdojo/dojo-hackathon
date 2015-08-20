@@ -1,5 +1,7 @@
 var gulp = require('gulp'),
-    connect = require('gulp-connect');
+    connect = require('gulp-connect'),
+    proxy = require('proxy-middleware'),
+    url = require('url');
 
 gulp.task('server', function () {
     connect.server({
@@ -9,14 +11,14 @@ gulp.task('server', function () {
         debug : true,
         middleware: function (connect, opt) {
             return [
-                mock.proxyApi(baseUrl, baseRoute),
+                proxyApi(baseUrl, baseRoute),
             ];
         }
     });
 });
 
-var baseUrl = 'http://localhost:8080/edison/';
-var baseRoute = '/';
+var baseUrl = 'http://localhost:8080/api/';
+var baseRoute = '/api';
 
 function proxyApi(baseUrl, baseRoute) {
     var proxyUrl= (baseUrl || 'http://localhost:8080');
