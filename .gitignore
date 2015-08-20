@@ -1,0 +1,14 @@
+# IntelliJ
+*.iml
+.idea/
+
+.DS*
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+
+# JavaScript / NodeJS
+node_modules/
