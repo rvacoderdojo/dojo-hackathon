@@ -16,6 +16,7 @@ public class Result {
     @OneToOne
     @JoinColumn(name = "hackerid")
     private Hacker hacker;
+
     @OneToOne
     @JoinColumn(name = "challengeid")
     private Challenge challenge;
